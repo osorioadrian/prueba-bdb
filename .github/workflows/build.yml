@@ -15,7 +15,3 @@ jobs:
         run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       - name: Build
         run: npm run build
-      - name: Archive production artifacts2
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
