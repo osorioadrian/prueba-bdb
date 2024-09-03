@@ -1,0 +1,66 @@
+<form [formGroup]="form">
+<div class="card-wrapper">
+  <div class="card">
+    <div class="card-header">
+      Información básica
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="primerNombre" class="color-primary">Primer Nombre</label>
+            <input type="text" id="primerNombre" readonly formControlName="primerNombre" aria-label="Primer Nombre" class="form-control">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="segundoNombre" class="color-primary">Segundo Nombre</label>
+            <input type="text" id="segundoNombre" readonly formControlName="segundoNombre" aria-label="Segundo Nombre" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="primerApellido" class="color-primary">Primer Apellido</label>
+            <input type="text" id="primerApellido" readonly formControlName="primerApellido" aria-label="Primer Apellido" class="form-control">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="segundoApellido" class="color-primary">Segundo Apellido</label>
+            <input type="text" id="segundoApellido" readonly formControlName="segundoApellido" aria-label="Segundo Apellido" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="telefono" class="color-primary">Teléfono</label>
+            <input type="text" id="telefono" readonly formControlName="telefono" aria-label="telefono" class="form-control">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="direccion" class="color-primary">Dirección</label>
+            <input type="text" id="direccion" readonly formControlName="direccion" aria-label="direccion" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="ciudadResidencia" class="color-primary">Ciudad Residencia</label>
+            <input type="text" id="ciudadResidencia" readonly formControlName="ciudadResidencia" aria-label="Ciudad Residencia" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" (click)="volver($event)">volver</button>
+    </div>
+  </div>
+</div>
+</form>

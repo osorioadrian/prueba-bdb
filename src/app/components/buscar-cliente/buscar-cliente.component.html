@@ -1,0 +1,64 @@
+<form [formGroup]="form">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-header">
+        Buscar Cliente
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="tipoDocumento" class="color-primary">Tipo de documento</label>
+          <select class="form-select" id="tipoDocumento" formControlName="tipoDocumento">
+            <option value="C">Cédula de ciudadanía</option>
+            <option value="P">Pasaporte</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="numeroDocumento" class="color-primary">Número de documento</label>
+          <input
+            type="text"
+            formControlName="numeroDocumento"
+            id="numeroDocumento"
+            aria-label="Número de documento"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': form.get('numeroDocumento')?.invalid && form.get('numeroDocumento')?.touched }"
+            currencyMask
+            [options]="{ prefix: '', thousands: '.', decimal: ',', suffix: '', precision: 0}"
+          />
+          @if (form.get('numeroDocumento')?.invalid && form.get('numeroDocumento')?.touched) {
+            @if (form.get('numeroDocumento')?.errors?.['pattern']) {
+              <div class="invalid-feedback">
+                Ingrese solo números
+              </div>
+            }
+            @if (form.get('numeroDocumento')?.errors?.['required']) {
+              <div class="invalid-feedback">
+                El número de documento es requerido
+              </div>
+            }
+            @if (form.get('numeroDocumento')?.errors?.['minlength']) {
+              <div class="invalid-feedback">
+                El número de documento debe tener al menos 8 dígitos
+              </div>
+            }
+            @if (form.get('numeroDocumento')?.errors?.['maxlength']) {
+              <div class="invalid-feedback">
+                El número de documento no debe exceder los 11 dígitos
+              </div>
+            }
+          }
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary center" [disabled]="form.invalid" (click)="buscar()">Buscar</button>
+        </div>
+        @if (errorMessage) {
+          <div class="alert alert-danger mt-3">
+            {{ errorMessage }}
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  </form>
