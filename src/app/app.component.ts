@@ -11,6 +11,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
 
-  title = 'prueba-bdb';
+  title = 'prueba-bdb 2';
 
 }
